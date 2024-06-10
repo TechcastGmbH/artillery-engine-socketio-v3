@@ -11,8 +11,8 @@ const io = require('socket.io-client');
 
 const deepEqual = require('deep-equal');
 const debug = require('debug')('socketio');
-const engineUtil = require('artillery/core/lib/engine_util.js');
-const EngineHttp = require('artillery/core/lib/engine_http.js');
+const engineUtil = require('@artilleryio/int-commons').engine_util;
+const EngineHttp = require('@artilleryio/int-core/lib/engine_http');
 const template = engineUtil.template;
 module.exports = SocketIoEngine;
 
