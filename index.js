@@ -161,8 +161,8 @@ SocketIoEngine.prototype.step = function (requestSpec, ee) {
       let delegateFunc = self.httpDelegate.step(requestSpec, ee);
       return delegateFunc(context, callback);
     }
-    ee.emit('counter', 'engine.socketio.emit', 1);
-    ee.emit('rate', 'engine.socketio.emit_rate');
+    ee.emit('counter', 'socketio.emit', 1);
+    ee.emit('rate', 'socketio.emit_rate');
     let startedAt = process.hrtime();
     let socketio = context.sockets[requestSpec.namespace] || null;
 
