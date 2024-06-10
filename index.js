@@ -39,7 +39,8 @@ SocketIoEngine.prototype.createScenario = function(scenarioSpec, ee) {
 function markEndTime(ee, context, startedAt) {
   let endedAt = process.hrtime(startedAt);
   let delta = (endedAt[0] * 1e9) + endedAt[1];
-  ee.emit('response', delta, 101, context._uid);
+  //ee.emit('response', delta, 101, context._uid);
+  ee.emit('histogram', 'socketio.response_time', delta / 1e6);
 }
 
 function isResponseRequired(spec) {
